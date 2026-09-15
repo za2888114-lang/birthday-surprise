@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1.0,
+      maximum-scale=1.0,
+      user-scalable=no">
+
+<title>For My 🦋</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #fff1f6;
+    color: #542638;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* MAIN PRESENTATION */
+
+.presentation {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #fff9fb 0%,
+            #ffeaf1 35%,
+            #f9ccda 70%,
+            #f3b5c9 100%
+        );
+}
+
+/* SOFT BACKGROUND GLOW */
+
+.presentation::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.45);
+
+    filter: blur(70px);
+
+    top: 15%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+/* FLOATING PARTICLES */
+
+.presentation::before {
+    content: "✦  ✧  ⋆  ✦  ˚  ✧  ⋆  ✦  ˚  ✧  ⋆";
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    color: rgba(120,45,75,0.20);
+
+    font-size: 20px;
+    letter-spacing: 35px;
+    line-height: 80px;
+
+    animation: stars 18s linear infinite;
+
+    pointer-events: none;
+}
+
+@keyframes stars {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-120px);
+    }
+}
+
+/* SLIDES */
+
+.slide {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 35px 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.04);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease,
+        visibility 0.8s;
+
+    z-index: 2;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* SMALL TEXT */
+
+.small {
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    color: #8a5368;
+
+    opacity: 0.9;
+
+    margin-bottom: 18px;
+}
+
+/* HEADINGS */
+
+h1 {
+    font-size: clamp(32px, 9vw, 55px);
+
+    line-height: 1.12;
+
+    color: #421d2c;
+
+    margin-bottom: 22px;
+
+    text-shadow:
+        0 3px 12px rgba(120,45,75,0.10);
+}
+
+/* MESSAGE */
+
+.message {
+    max-width: 500px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+    line-height: 1.8;
+
+    color: #633447;
+
+    opacity: 0.95;
+
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+
+.open-button {
+    border: 1px solid rgba(120,45,75,0.22);
+
+    background:
+        rgba(255,255,255,0.65);
+
+    color: #542638;
+
+    padding: 14px 25px;
+
+    border-radius: 50px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(120,45,75,0.12);
+
+    transition: 0.3s;
+}
+
+.open-button:active {
+    transform: scale(0.94);
+}
+
+/* LOADER */
+
+.loader {
+    width: 45px;
+    height: 45px;
+
+    border: 3px solid rgba(120,45,75,0.15);
+
+    border-top-color: #8e4663;
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+
+    margin: 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* BUTTERFLY */
+
+.butterfly {
+    font-size: 60px;
+
+    margin-bottom: 20px;
+
+    filter:
+        drop-shadow(
+            0 8px 18px
+            rgba(140,50,90,0.25)
+        );
+
+    animation: butterflyFloat 3s ease-in-out infinite;
+}
+
+@keyframes butterflyFloat {
+
+    0%,100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+}
+
+/* TYPEWRITER */
+
+#typingText {
+    min-height: 35px;
+
+    font-size: 23px;
+
+    font-family: Georgia, serif;
+
+    color: #5c2a3d;
+}
+
+/* CARDS */
+
+.cards {
+    width: 100%;
+    max-width: 450px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+
+    margin-top: 10px;
+}
+
+.card {
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.48);
+
+    border:
+        1px solid rgba(120,45,75,0.15);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(120,45,75,0.08);
+
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+.card:active {
+    transform: scale(0.97);
+}
+
+.card-title {
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #542638;
+
+    margin-bottom: 6px;
+}
+
+.card-text {
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #73445a;
+}
+
+/* HEART */
+
+.heart {
+    font-size: 65px;
+
+    animation:
+        heartbeat 1.5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 7px 15px
+            rgba(150,50,90,0.20)
+        );
+
+    margin-bottom: 20px;
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* SECRET */
+
+.secret {
+    margin-top: 25px;
+
+    max-width: 420px;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.60);
+
+    border:
+        1px solid rgba(120,45,75,0.18);
+
+    color: #542638;
+
+    font-family: Arial, sans-serif;
+
+    line-height: 1.7;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    pointer-events: none;
+
+    transition: 0.8s;
+
+    box-shadow:
+        0 10px 30px
+        rgba(120,45,75,0.10);
+}
+
+.secret.show {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+/* FINAL BUTTERFLY */
+
+.final-butterfly {
+    font-size: 75px;
+
+    animation:
+        finalFloat 4s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 10px 25px
+            rgba(140,50,90,0.25)
+        );
+
+    margin-bottom: 25px;
+}
+
+@keyframes finalFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-18px)
+            rotate(5deg);
+    }
+}
+
+/* NAVIGATION */
+
+.navigation {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    z-index: 20;
+}
+
+.nav-button {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(120,45,75,0.20);
+
+    background:
+        rgba(255,255,255,0.50);
+
+    color: #542638;
+
+    font-size: 18px;
+
+    backdrop-filter: blur(10px);
+
+    cursor: pointer;
+}
+
+.slide-number {
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    color: #75475a;
+
+    letter-spacing: 2px;
+}
+
+/* CONFETTI */
+
+.confetti {
+    position: fixed;
+
+    width: 8px;
+    height: 12px;
+
+    top: -20px;
+
+    z-index: 100;
+
+    animation:
+        confettiFall
+        3s linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .message {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .butterfly {
+        font-size: 55px;
+    }
+
+    .final-butterfly {
+        font-size: 68px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .navigation {
+        bottom: 18px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="presentation">
+
+    <!-- SLIDE 1 -->
+
+    <section class="slide active">
+
+        <div class="small">
+            A LITTLE SOMETHING FOR YOU
+        </div>
+
+        <div class="loader"></div>
+
+        <p class="message">
+            Loading something special...
+        </p>
+
+        <p class="small">
+            Please wait...
+        </p>
+
+    </section>
+
+
+    <!-- SLIDE 2 -->
+
+    <section class="slide">
+
+        <div class="butterfly">
+            🦋
+        </div>
+
+        <div class="small">
+            TODAY IS A LITTLE DIFFERENT
+        </div>
+
+        <h1>
+            Happy Birthday<br>
+            My 🦋
+        </h1>
+
+        <p class="message">
+            Today is all about you.
+        </p>
+
+        <button
+            class="open-button"
+            onclick="nextSlide()">
+            Open your surprise ✨
+        </button>
+
+    </section>
+
+
+    <!-- SLIDE 3 -->
+
+    <section class="slide">
+
+        <div class="small">
+            I COULD HAVE JUST SAID...
+        </div>
+
+        <h1 id="typingText"></h1>
+
+        <p class="message">
+            But somehow, that didn't feel like enough.
+        </p>
+
+    </section>
+
+
+    <!-- SLIDE 4 -->
+
+    <section class="slide">
+
+        <div class="butterfly">
+            🦋
+        </div>
+
+        <div class="small">
+            SO I MADE THIS
+        </div>
+
+        <h1>
+            Just for you.
+        </h1>
+
+        <p class="message">
+            Not because I had to.
+            Not to impress you.
+            I simply wanted to create something
+            that was yours.
+        </p>
+
+    </section>
+
+
+    <!-- SLIDE 5 -->
+
+    <section class="slide">
+
+        <div class="small">
+            THREE THINGS I WISH FOR YOU
+        </div>
+
+        <h1>
+            Always.
+        </h1>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-title">
+                    🌷 Peace
+                </div>
+
+                <div class="card-text">
+                    I hope your heart finds
+                    more peaceful days.
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-title">
+                    🤍 Happiness
+                </div>
+
+                <div class="card-text">
+                    I hope you find little reasons
+                    to smile every day.
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-title">
+                    ✨ Dreams
+                </div>
+
+                <div class="card-text">
+                    I hope the things you dream about
+                    slowly become real.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SLIDE 6 -->
+
+    <section class="slide">
+
+        <div class="heart">
+            ❤️
+        </div>
+
+        <div class="small">
+            ONE THING I WANT YOU TO KNOW
+        </div>
+
+        <h1>
+            You matter.
+        </h1>
+
+        <p class="message">
+            Even on the days when you don't feel
+            like talking, even when things feel
+            difficult, I hope you remember that
+            your existence itself is valuable.
+        </p>
+
+    </section>
+
+
+    <!-- SLIDE 7 -->
+
+    <section class="slide">
+
+        <div class="small">
+            THERE'S ONE MORE THING...
+        </div>
+
+        <h1>
+            A little secret
+        </h1>
+
+        <p class="message">
+            Tap the 🦋
+        </p>
+
+        <button
+            class="open-button"
+            onclick="showSecret()">
+
+            🦋
+
+        </button>
+
+        <div
+            class="secret"
+            id="secretMessage">
+
+            You found the little secret...
+            <br><br>
+
+            I made this whole thing
+            just because you're special to me. 🤍
+
+        </div>
+
+    </section>
+
+
+    <!-- SLIDE 8 -->
+
+    <section class="slide">
+
+        <div class="final-butterfly">
+            🦋
+        </div>
+
+        <div class="small">
+            THE END
+        </div>
+
+        <h1>
+            Happy Birthday<br>
+            My 🦋
+        </h1>
+
+        <p class="message">
+            May this year bring you
+            more peace, more happiness,
+            beautiful moments,
+            and everything your heart deserves.
+            <br><br>
+            Keep being you.
+        </p>
+
+        <button
+            class="open-button"
+            onclick="celebrate()">
+
+            One last surprise ✨
+
+        </button>
+
+    </section>
+
+
+    <!-- NAVIGATION -->
+
+    <div class="navigation">
+
+        <button
+            class="nav-button"
+            onclick="previousSlide()">
+            ‹
+        </button>
+
+        <div
+            class="slide-number"
+            id="slideNumber">
+            1 / 8
+        </div>
+
+        <button
+            class="nav-button"
+            onclick="nextSlide()">
+            ›
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let currentSlide = 0;
+
+const slides =
+    document.querySelectorAll(".slide");
+
+const totalSlides = slides.length;
+
+const slideNumber =
+    document.getElementById("slideNumber");
+
+
+function showSlide(index) {
+
+    if (index < 0) {
+        index = totalSlides - 1;
+    }
+
+    if (index >= totalSlides) {
+        index = 0;
+    }
+
+    slides[currentSlide]
+        .classList.remove("active");
+
+    currentSlide = index;
+
+    slides[currentSlide]
+        .classList.add("active");
+
+    slideNumber.textContent =
+        `${currentSlide + 1} / ${totalSlides}`;
+
+    if (currentSlide === 2) {
+        startTyping();
+    }
+}
+
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+
+function previousSlide() {
+    showSlide(currentSlide - 1);
+}
+
+
+/* TYPEWRITER */
+
+let typingStarted = false;
+
+function startTyping() {
+
+    if (typingStarted) return;
+
+    typingStarted = true;
+
+    const text =
+        "Happy Birthday... 🤍";
+
+    const element =
+        document.getElementById("typingText");
+
+    let i = 0;
+
+    element.textContent = "";
+
+    const typing =
+        setInterval(() => {
+
+            element.textContent +=
+                text.charAt(i);
+
+            i++;
+
+            if (i >= text.length) {
+                clearInterval(typing);
+            }
+
+        }, 90);
+}
+
+
+/* SECRET MESSAGE */
+
+function showSecret() {
+
+    const secret =
+        document.getElementById(
+            "secretMessage"
+        );
+
+    secret.classList.add("show");
+
+}
+
+
+/* CONFETTI */
+
+function celebrate() {
+
+    const colors = [
+        "#d96b91",
+        "#e58aaa",
+        "#f1a9bf",
+        "#b9577b",
+        "#c97896",
+        "#f5c3d3"
+    ];
+
+    for (let i = 0; i < 90; i++) {
+
+        const piece =
+            document.createElement("div");
+
+        piece.classList.add("confetti");
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
+
+        piece.style.animationDuration =
+            (2 + Math.random() * 3) + "s";
+
+        piece.style.animationDelay =
+            Math.random() * 0.7 + "s";
+
+        piece.style.transform =
+            `rotate(${Math.random() * 360}deg)`;
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+            piece.remove();
+        }, 5000);
+    }
+
+}
+
+
+/* SWIPE SUPPORT */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+document.addEventListener(
+    "touchstart",
+    function(e) {
+
+        touchStartX =
+            e.changedTouches[0].screenX;
+
+    },
+    false
+);
+
+
+document.addEventListener(
+    "touchend",
+    function(e) {
+
+        touchEndX =
+            e.changedTouches[0].screenX;
+
+        handleSwipe();
+
+    },
+    false
+);
+
+
+function handleSwipe() {
+
+    const difference =
+        touchStartX - touchEndX;
+
+    if (Math.abs(difference) < 50) {
+        return;
+    }
+
+    if (difference > 0) {
+        nextSlide();
+    } else {
+        previousSlide();
+    }
+
+}
+
+
+/* KEYBOARD */
+
+document.addEventListener(
+    "keydown",
+    function(e) {
+
+        if (e.key === "ArrowRight") {
+            nextSlide();
+        }
+
+        if (e.key === "ArrowLeft") {
+            previousSlide();
+        }
+
+    }
+);
+
+
+/* START */
+
+setTimeout(() => {
+    nextSlide();
+}, 4000);
+
+</script>
+
+</body>
+</html>
